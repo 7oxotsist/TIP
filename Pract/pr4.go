@@ -6,8 +6,11 @@ func main() {
 	//fmt.Print(sumOfNumbers(1234))
 	//fmt.Println(toC(25))
 	//fmt.Println(toF(77))
-	arr := [4]int32{1, 2, 3, 4}
-	fmt.Print(double(arr))
+	//arr := [4]int32{1, 2, 3, 4}
+	str := [...]string{"Hello", "World", "!"}
+	slicedStr := str[:]
+	//fmt.Print(double(arr))
+	fmt.Print(concat(slicedStr))
 }
 
 // Сумма цифр
@@ -33,4 +36,12 @@ func double(a [4]int32) [4]int32 {
 		a[i] = a[i] * 2
 	}
 	return a
+}
+
+func concat(str []string) string {
+	var res string = str[0]
+	for i := 1; i < len(str); i++ {
+		res += " " + str[i]
+	}
+	return res
 }
